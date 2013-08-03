@@ -1,6 +1,6 @@
 <?php
 	ob_start();
-	include('Include.php');
+	include('include.php');
 
 	$stat = Statistic::create();
 

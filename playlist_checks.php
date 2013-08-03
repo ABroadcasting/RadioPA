@@ -11,8 +11,8 @@
 	<div class="body">
 		<div class="navi"><a href="playlist.php">Плейлисты</a></div>
 		<div class="navi"><a href="playlist_edit.php">Создать плейлист</a></div>
-		<div class="navi"><a href="playlist_zakaz.php">Заказы</a></div>
-		<div class="navi_white"><a href="playlist_proverki.php">Проверки</a></div>
+		<div class="navi"><a href="playlist_order.php">Заказы</a></div>
+		<div class="navi_white"><a href="playlist_checks.php">Проверки</a></div>
 		<br><br>
 		<div class="title">Эти файлы не существуют</div>
 		<div class="border">
@@ -52,7 +52,7 @@
         			<?=$line['filename']?>
         		</td>
 				<td <?=$style?>>
-					<a href="playlist_proverki.php?delete_song3=<?=$line['idsong']?>">
+					<a href="playlist_checks.php?delete_song3=<?=$line['idsong']?>">
 						<img src="images/delete2.gif" border="0" title="Удалить песню из плейлиста">
 					</a>
 				</td>
@@ -118,12 +118,12 @@
         		<?=$line['filename']?>
         	</td>
         	<td <?=$color?>>
-        		<a href="playlist_proverki.php?povtor=yes&delete_song=<?=$line['idsong']?>">
+        		<a href="playlist_checks.php?povtor=yes&delete_song=<?=$line['idsong']?>">
         			<img src="images/delete.gif" border="0" title="Удалить песню из этого списка">
         		</a>
         	</td>
 			<td <?=$color?>>
-				<a href="playlist_proverki.php?povtor=yes&delete_song2=<?=$line['idsong']?>">
+				<a href="playlist_checks.php?povtor=yes&delete_song2=<?=$line['idsong']?>">
 					<img src="images/delete2.gif" border="0" title="Удалить песню из всех плейлистов и жётского диска">
 				</a>
 			</td>
@@ -148,5 +148,5 @@
 	</div>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

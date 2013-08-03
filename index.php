@@ -30,7 +30,7 @@
 <?php
 	$count = $file->getCountTempFiles();
 	$pokazat = "";
-	if ($count >= 1 and TEMP_UPLOAD != "") {		$pokazat = " — <a href='/radio/meneger.php?fold=".$request->getMusicPath().TEMP_UPLOAD."'>Посмотреть</a>";
+	if ($count >= 1 and TEMP_UPLOAD != "") {		$pokazat = " — <a href='/radio/manager.php?fold=".$request->getMusicPath().TEMP_UPLOAD."'>Посмотреть</a>";
 	} else {		$count = 0;
 	}
 ?>
@@ -68,7 +68,7 @@
 	}
 ?>
 <?php
-			include('Tpl/error.tpl.html');
+			include('tpl/error.tpl.html');
 ?>
 			<br><br>
 			<img style="position: absolute; margin-top: -1px;" src="images/go.png" border="0"> <a style="position: absolute; margin-left: 17px;" href="http://radiocms.ru" target="_blank">Официальный сайт</a>
@@ -83,5 +83,5 @@
 		</div>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

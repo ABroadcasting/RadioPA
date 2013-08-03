@@ -11,8 +11,8 @@
 	<div class="body">
 		<div class="navi_white"><a href="playlist.php">Плейлисты</a></div>
 		<div class="navi"><a href="playlist_edit.php">Создать плейлист</a></div>
-		<div class="navi"><a href="playlist_zakaz.php">Заказы</a></div>
-		<div class="navi"><a href="playlist_proverki.php">Проверки</a></div>
+		<div class="navi"><a href="playlist_order.php">Заказы</a></div>
+		<div class="navi"><a href="playlist_checks.php">Проверки</a></div>
 		<br><br>
 		<form method="POST" action="">
 			<div class="title">Редактирование песни</div>
@@ -137,7 +137,7 @@
 <?php
 	if ($request->getGetVar('playlist_id') == "povtor") {
 ?>
-				<input class="button" type="button" value="Назад" name="back" onClick="location.href='playlist_proverki.php?povtor=yes'" />
+				<input class="button" type="button" value="Назад" name="back" onClick="location.href='playlist_checks.php?povtor=yes'" />
 <?php
 	} else {
 ?>
@@ -150,5 +150,5 @@
 		</form>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

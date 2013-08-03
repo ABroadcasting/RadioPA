@@ -19,8 +19,8 @@
 	<div class="body">
 		<div class="navi"><a href="playlist.php">Плейлисты</a></div>
 		<div class="navi_white"><a href="playlist_edit.php">Создать плейлист</a></div>
-		<div class="navi"><a href="playlist_zakaz.php">Заказы</a></div>
-		<div class="navi"><a href="playlist_proverki.php">Проверки</a></div>
+		<div class="navi"><a href="playlist_order.php">Заказы</a></div>
+		<div class="navi"><a href="playlist_checks.php">Проверки</a></div>
 		<br><br>
 		<div class="title">Создание и редактирование плейлистов</div>
 		<form method="post" action="">
@@ -487,5 +487,5 @@
 		</form>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

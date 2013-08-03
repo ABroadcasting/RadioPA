@@ -4,10 +4,10 @@
 
 	$xml_file = array();
 
-	$xml_file[0]['name'] = "30823_1.xml"; //id или index города + "_1.xml"
+	$xml_file[0]['name'] = "30823_1.xml"; //id or index of the city + "_1.xml"
 	$xml_file[0]['city_name'] = "Улан-Удэ";
 	$xml_file[0]['time_diff'] = 5;
-	$xml_file[1]['name'] = "27612_1.xml"; //id или index города + "_1.xml"
+	$xml_file[1]['name'] = "27612_1.xml"; //id or index of the city + "_1.xml"
 	$xml_file[1]['city_name'] = "Москва";
 	$xml_file[1]['time_diff'] = 5;
 

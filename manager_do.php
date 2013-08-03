@@ -1,6 +1,6 @@
 <?php
 	ob_start();
-	require_once('Include.php');
+	require_once('include.php');
 
 	$auth = Autentification::create();
 	$user = $auth->getUser();
@@ -11,9 +11,9 @@
     	$security->denied();
 	}
 
-	$meneger = Meneger::create();
-	$meneger->handler();
+	$manager = Meneger::create();
+	$manager->handler();
 
-	Header ("Location: meneger.php?fold=".$meneger->getFolder()."&start=".$meneger->getStart()."&search=".$meneger->getSearch());
+	Header ("Location: manager.php?fold=".$manager->getFolder()."&start=".$manager->getStart()."&search=".$manager->getSearch());
 ?>
 

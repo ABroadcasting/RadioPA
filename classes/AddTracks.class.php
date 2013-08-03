@@ -8,7 +8,7 @@
 		private function __construct(Song $song) {			$this->request = Request::create();
 			$this->db = MySql::create();
 			$this->ssh = Ssh::create();
-			$this->meneger = Meneger::create();
+			$this->manager = Meneger::create();
 			$this->song = $song;
 			$this->filter = Filter::create();		}
 
@@ -21,7 +21,7 @@
 
 		public function addTrack($filename) {			$playlistId = $this->request->getGetVar('playlist_id');			$filenameTemp = $this->getRealPath($filename);
 
-			if (!$this->meneger->isMp3($filenameTemp)) {				return false;			}
+			if (!$this->manager->isMp3($filenameTemp)) {				return false;			}
 			$filename = $this->filter->cleanFileName($filenameTemp);
 
 			if ($this->isAlreadyExists($filename)) {				return false;			}

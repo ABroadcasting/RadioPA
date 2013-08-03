@@ -1,5 +1,5 @@
 <?php
-	require_once('Include.php');
+	require_once('include.php');
 	require_once("_system.php");
 
 	$statistic = Statistic::create();

@@ -2,7 +2,7 @@
 	ob_start();
 	$vers = "2.5";
     
-    include('Include.php');
+    include('include.php');
     
 	$request = Request::create();
 	$ins = Install::create();

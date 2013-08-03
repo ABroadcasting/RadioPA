@@ -76,5 +76,5 @@
 	</div>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

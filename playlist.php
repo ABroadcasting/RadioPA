@@ -12,8 +12,8 @@
 	<div class="body">
 		<div class="navi_white"><a href="playlist.php">Плейлисты</a></div>
 		<div class="navi"><a href="playlist_edit.php">Создать плейлист</a></div>
-		<div class="navi"><a href="playlist_zakaz.php">Заказы</a></div>
-		<div class="navi"><a href="playlist_proverki.php">Проверки</a></div>
+		<div class="navi"><a href="playlist_order.php">Заказы</a></div>
+		<div class="navi"><a href="playlist_checks.php">Проверки</a></div>
 		<br><br>	
 		<div class="title">Визуальный плейлист</div>
 			<div class="border">
@@ -48,7 +48,7 @@
 				        	<?=$playlist->getPlaymode($line['playmode'])?>
 							<br>
 							<a href="playlist_edit.php?playlist_id=<?php echo $line["id"]?>"><img src="images/edit.gif" width="16" height="16" border="0" title="Редактировать плейлист"></a>&nbsp;&nbsp;
-				        	<a href="meneger.php?playlist_id=<?php echo $line['id']?>"><img src="images/plus.gif" width="16" height="16" border="0" title="Добавить треки в плейлист"></a>&nbsp;&nbsp;
+				        	<a href="manager.php?playlist_id=<?php echo $line['id']?>"><img src="images/plus.gif" width="16" height="16" border="0" title="Добавить треки в плейлист"></a>&nbsp;&nbsp;
 				        	<a href="playlist.php?delete_playlist=<?php echo $line['id']?>"><img src="images/delete2.gif" width="16" height="16" border="0" title="Удалить плейлист"></a>
 				        </td>
 				        <td width="51%" <?=$color?>>
@@ -123,5 +123,5 @@
 		<br><br>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  

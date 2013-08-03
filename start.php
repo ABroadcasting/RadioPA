@@ -1,6 +1,6 @@
 <?php
 
-	include('Include.php');
+	include('include.php');
 
 	$status = Status::create();
 

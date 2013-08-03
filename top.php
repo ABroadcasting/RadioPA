@@ -1,6 +1,6 @@
 <?php
     ob_start();
-	require_once('Include.php');
+	require_once('include.php');
 
 	$requestFilter = RequestFilter::create();
 	$auth = Autentification::create();
@@ -16,7 +16,7 @@
 	$user = $auth->getUser();
 
 	if (empty($user)) {
-		include('Tpl/login.tpl.html');
+		include('tpl/login.tpl.html');
 		exit;	}
 
 	/* Вы зашли как */
@@ -24,5 +24,5 @@
     } else {    	$prava = "администратор";
     }
 
-    include('Tpl/header.tpl.html');
+    include('tpl/header.tpl.html');
 ?>

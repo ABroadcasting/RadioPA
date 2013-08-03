@@ -6,11 +6,11 @@
 	}
 
 	$song = Song::create();
-	$meneger = Meneger::create();
-	$start = $meneger->getStart();
-	$playlist_id_get = $meneger->getPlaylistId();
-	$fold = $meneger->getFold();
-	$search = $meneger->getSearch();
+	$manager = Meneger::create();
+	$start = $manager->getStart();
+	$playlist_id_get = $manager->getPlaylistId();
+	$fold = $manager->getFold();
+	$search = $manager->getSearch();
 
 	$in = 0;
 	$i = 0;
@@ -18,10 +18,10 @@
 	$ipk = 0;
 	$ips = 0;
 
-	$dirct = $meneger->getDirct();
-	$dirct2 = $meneger->getDirct2();
-    $back = $meneger->getBack();
-    $begin = $meneger->getBegin();
+	$dirct = $manager->getDirct();
+	$dirct2 = $manager->getDirct2();
+    $back = $manager->getBack();
+    $begin = $manager->getBegin();
 
 	$dirct_f = str_replace(" ", "%20", $dirct);
 ?>
@@ -31,7 +31,7 @@
 <?php
 	if (!empty($playlist_id_get)) {
 ?>
-		Добавление файлов в <?=$meneger->getPlaylistName($playlist_id_get)?> (<?=$dirct2?>)
+		Добавление файлов в <?=$manager->getPlaylistName($playlist_id_get)?> (<?=$dirct2?>)
 <?php	} else {
 ?>
 		Файловый менеджер <?=$dirct2?>
@@ -40,7 +40,7 @@
 ?>
 		</div>
 	<div class="border">
-		<form name='fman' action='meneger_zapros.php?folder=<?=$dirct_f?>&start=<?=$start?>&search=<?=$search?>' method='POST'>
+		<form name='fman' action='manager_query.php?folder=<?=$dirct_f?>&start=<?=$start?>&search=<?=$search?>' method='POST'>
 		<table border=0 cellspacing="0" cellpadding="0" width="97%" class="table1">
 			<tr>
 				<td width=25>Выб.</td>
@@ -49,7 +49,7 @@
 <?php
 	if ($dirct!=$begin) {
 ?>
-					<b><a href="meneger.php?fold=<?=$back?>&playlist_id=<?=$playlist_id_get?>">Вернуться назад</a></b>
+					<b><a href="manager.php?fold=<?=$back?>&playlist_id=<?=$playlist_id_get?>">Вернуться назад</a></b>
 <?php
 	}
 ?>
@@ -58,7 +58,7 @@
 		</table>
 		<table border="0" cellspacing="0" cellpadding="0" width="97%" class="table1">
 <?php
-	$list = $meneger->getList();
+	$list = $manager->getList();
 	foreach ($list['list'] as $k) {
 
     	if ($i == 0) {    		$bg = " bgcolor='#F5F4F7'";
@@ -71,7 +71,7 @@
     	}
 
 		$full = $dirct."/".$k;
-		$k_size = $meneger->getFilesize($full);
+		$k_size = $manager->getFilesize($full);
 
     	if (is_dir($full) === true) {
 ?>
@@ -102,7 +102,7 @@
 
 	    	$kp = urlencode($k);
 	        if ($dirct2 == "/music") {
-	            if ($meneger->isMp3($k)) {
+	            if ($manager->isMp3($k)) {
 	    			if (!empty($playlist_id_get)) {
 ?>
 	    				<img src="images/delete2.gif" width="16" height="16" border="0" title="Для того бы добавить эту песню в плейлист необходимо перенести её в папку">
@@ -124,7 +124,7 @@
 	    			}
 	    		}
 	        } else {
-	        	if ($meneger->isMp3($k)) {
+	        	if ($manager->isMp3($k)) {
 	    			if (!empty($playlist_id_get)) {
 ?>
 						<a href="add_tracks.php?start=<?=$start?>&search=<?=$search?>&filename=<?=urlencode($full)?>&playlist_id=<?=$playlist_id_get?>">
@@ -152,7 +152,7 @@
 <?php
 		}
 
-  		$playlist_name = $meneger->getUseIn($full);
+  		$playlist_name = $manager->getUseIn($full);
 
     	$old_k = $k;
    		$k = wordwrap($k, 30, "\n", 1);
@@ -163,12 +163,12 @@
 			if (!empty($playlist_id_get)) {
 ?>
 					<img src="images/m_folder.gif" border="0" width="13" height="11">
-					<a href="meneger.php?fold=<?=$full?>&playlist_id=<?=$playlist_id_get?>"><b><?=$k?></b></a>
+					<a href="manager.php?fold=<?=$full?>&playlist_id=<?=$playlist_id_get?>"><b><?=$k?></b></a>
 					<br><div class="podpis">Папка номер <?=$ips?></div>
 <?php
 			} else {?>
 					<img src="images/m_folder.gif" border="0" width="13" height="11">
-					<a href="meneger.php?fold=<?=$full?>"><b><?=$k?></b></a>
+					<a href="manager.php?fold=<?=$full?>"><b><?=$k?></b></a>
 					<br><div class="podpis">Папка номер <?=$ips+1?></div><?php
 			}
 ?>
@@ -179,9 +179,9 @@
 				<td id="t_<?=$ipr?>" width="31%" valign="top">
 					<label for="<?=$ipr?>"><div><img src="images/m_file.png" border="0" width="9" height="12"> <?=$k?></div><div class=podpis>Файл номер <?=$ips+1?> (<?=$k_size?>)</div></label>
 <?php
-				if ($meneger->isTempUpload($full)) {
+				if ($manager->isTempUpload($full)) {
 					$afl = $song->getPlayerPath($full);
-                    if ($meneger->isMp3($old_k)) {
+                    if ($manager->isMp3($old_k)) {
 ?>
 						<div class="podpis">
 							<div style="height: 20px; margin-top: 3px;">
@@ -328,7 +328,7 @@
 				<td width="20%">&nbsp;</td>
 				<td width="80%" valign="top" align="right">
 					<div class="searcht">
-						<form action='meneger_zapros.php?folder=<?=$dirct_f?>&start=<?=$start?>&playlist_id=<?=$playlist_id_get?>' method='post'>
+						<form action='manager_query.php?folder=<?=$dirct_f?>&start=<?=$start?>&playlist_id=<?=$playlist_id_get?>' method='post'>
 							Поиск в этой папке <input type="text" name="search" size="20" value="<?=$search?>">
 							<input type="submit" value="Найти" name="search_button">
 						</form>
@@ -339,5 +339,5 @@
 	</div>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

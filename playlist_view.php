@@ -23,8 +23,8 @@
 	<div class="body">
 		<div class="navi_white"><a href="playlist.php">Плейлисты</a></div>
 		<div class="navi"><a href="playlist_edit.php">Создать плейлист</a></div>
-		<div class="navi"><a href="playlist_zakaz.php">Заказы</a></div>
-		<div class="navi"><a href="playlist_proverki.php">Проверки</a></div>
+		<div class="navi"><a href="playlist_order.php">Заказы</a></div>
+		<div class="navi"><a href="playlist_checks.php">Проверки</a></div>
 		<br><br>
 		<form method="POST" action="">
 			<div class="title">
@@ -213,7 +213,7 @@
 <?php
 	}
 ?>
-				<input class="button" value="Добавить треки" name="14" type="button"  onClick="location.href='meneger.php?playlist_id=<?=$playlistId?>'" />
+				<input class="button" value="Добавить треки" name="14" type="button"  onClick="location.href='manager.php?playlist_id=<?=$playlistId?>'" />
 			</form>
 			<br><br>
 			<form method="POST" action="playlist_view.php?playlist_id=<?=$playlistId;?>">
@@ -224,5 +224,5 @@
 		<br><br>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  	

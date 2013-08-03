@@ -16,7 +16,7 @@
 					$id = $this->insert();
 				}
 				$id = !empty($id) ? $id : $this->request->getGetVar('playlist_id');
-				header("Location: meneger.php?playlist_id=".$id);
+				header("Location: manager.php?playlist_id=".$id);
 				exit;
 			}			if ($this->request->hasPostVar('submit')) {
 				if ($this->request->hasGetVar('playlist_id')) {					$this->update();				} else {					$id = $this->insert();				}

@@ -62,5 +62,5 @@ echo "<br><img src=graph.php?type=time>";
 		<br><br>
 	</div>
 <?php
-    include('Tpl/footer.tpl.html');
+    include('tpl/footer.tpl.html');
 ?>  

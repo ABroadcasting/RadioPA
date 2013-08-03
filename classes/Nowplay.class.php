@@ -134,7 +134,7 @@
 		
 		public function getMusicLoadForm() {
 		    ob_start();
-		    include($this->request->getRadioPath().'Tpl/musicLoadForm.tpl.html');
+		    include($this->request->getRadioPath().'tpl/musicLoadForm.tpl.html');
             $content = ob_get_contents();
             ob_end_clean();
                         
@@ -175,7 +175,7 @@
         	$visual = $this->generateVP($artoday, $array_vp);
 
         	ob_start();
-        	include($this->request->getRadioPath().'Tpl/visualPlaylist.tpl.html');
+        	include($this->request->getRadioPath().'tpl/visualPlaylist.tpl.html');
         	$content = ob_get_contents();
         	ob_end_clean();
         	return $content;
@@ -313,7 +313,7 @@
         	$dinamikaInfo = $this->getDinamikaInfo();
         	$dinamikaGraph = $this->getDinamikaGraphLine();
         	$dinamikaBottom = $this->getDinamikaBottomLine();
-        	ob_start();        	include($this->request->getRadioPath().'Tpl/dinamika.tpl.html');
+        	ob_start();        	include($this->request->getRadioPath().'tpl/dinamika.tpl.html');
         	$content = ob_get_contents();
         	ob_end_clean();
         	return $content;        }

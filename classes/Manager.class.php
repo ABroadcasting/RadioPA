@@ -54,7 +54,7 @@
 				$search = $this->request->getPostVar('search');
 				$folder = $this->getFolder();
 				$playlist_id_get = $this->getPlaylistId();
-				Header ("Location: meneger.php?fold=$folder&search=$search&playlist_id=$playlist_id_get");
+				Header ("Location: manager.php?fold=$folder&search=$search&playlist_id=$playlist_id_get");
 			}		}
 
 		public function getStart() {			if ($this->request->hasGetVar('start')) {
