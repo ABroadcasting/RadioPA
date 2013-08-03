@@ -1,0 +1,85 @@
+	.polovina1 {float:left; width: 49%; margin-right:5px;}
+	.polovina2 {float:left; width: 49%;margin-left:5px}
+	.graph_td {border:1px solid white;}
+	.graph {text-align: bottom; font-size: 1px; width:3px;background-image: url('/radio/images/bg_stat.jpg'); background-position: bottom right; float:left; valign: bottom; padding:0px; margin:0px;}
+	.graph_g2_1 {background-image: url('/radio/images/bg_g2_1.jpg'); background-position: bottom left; text-align: bottom; height:25px; valign: bottom;font-size:1px;}
+	.graph_g2_2 { background-image: url('/radio/images/bg_g2_2.jpg'); background-position: bottom right; text-align: bottom; height:25px; valign: bottom;font-size:1px;}
+	.minitext { color: white; font-family: verdana; font-size:10px; text-align: center;}
+	.podpis2 {font-size:9px;}
+
+	table, tr, td { font-family:verdana;font-size:12px;color: #333333;}
+	.tablepadding { padding:3px; }
+
+	.tablepadding tr { padding-bottom:6px; }
+
+	.body { padding: 8px 9px 10px 9px; font-family:verdana;font-size:12px;color: #333333;}
+	body, html {padding: 0px; margin: 0px; width: 100%;}
+
+	.navi a {float: left; font-family:verdana;font-size:10px;color: #333333; background-color: #6BB2E8; padding-right: 5px; padding-left: 5px; padding-top: 1px;padding-bottom: 1px; text-decoration: none; margin-right: 6px; }
+
+	.navi_white a {float: left; font-family:verdana;font-size:10px;color: #333333; background-color: #AAD3F2; padding-right: 5px; padding-left: 5px; padding-top: 1px;padding-bottom: 1px; text-decoration: none; margin-right: 6px;}
+
+	.podpis {font-family:verdana;font-size:10px;color: #888888; }
+
+
+	.title {margin: 15px 5px 10px 5px; font-family:verdana;font-size:18px;color: #333333; }
+
+
+	.navi_text {float: right; text-align: right; color: white; font-family:verdana; font-size:10px; padding-top:5px; padding-right:10px;}
+	.navi_text a {color:white;text-decoration: none;}
+
+
+	.border { color: #333333; font-family:verdana; font-size:12px; border: 1px solid #CCCCCC; padding: 10px 5px 10px 5px;}
+
+	.border a {color: #333333; font-family:verdana; font-size:12px;}
+
+	.frame {margin-left:1px; background-color: #66AEE5; height:2px;}
+
+	select, input {		font-family: verdana;
+		font-size: 12px;
+		color: #333333;
+		margin: 0px;
+	}
+
+	.table1 td { font-family:verdana;font-size:12px;color: #333333;padding:5px; }
+
+	.table1 td a {color: #333333; }
+	.style3 {font-family: Arial, Helvetica, sans-serif}
+	.style5 {
+		font-family: Geneva, Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.style6 {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 10px;
+		font-style: italic;
+	}
+
+	.bborder {border:1px solid #999999; color: #999999; padding:5px; display: inline;}
+
+	.searcht {margin-top: -40px; width: 100%; text-align: right;}
+
+	.mainMenu {		font-size: 0px;	}
+
+	.red {		color: #CC0066;	}
+
+	.green {		color: #009933;	}
+
+	.input label {		padding-right: 10px;	}
+
+	.input label:hover {
+		color: #555555;
+		cursor: pointer;
+	}
+	.input input:hover {		color: #555555;	}
+
+	.input {		height: 22px;	}
+
+	input[type="text"], input[type="password"], select, textarea {		padding: 3px 3px;	}
+
+	.playlist_edit label {		margin: 0px 10px 0px 3px;	}
+
+	.button {		font-size: 14px;
+	 	padding: 4px 8px;
+	 	height: auto;	}
