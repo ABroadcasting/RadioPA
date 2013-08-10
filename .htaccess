@@ -1,5 +1,1 @@
 AddDefaultCharset UTF-8
-
-RewriteEngine On
-RewriteRule ^radio$ radio/index.php [L]
-RewriteRule ^radio/$ radio/index.php [L]
