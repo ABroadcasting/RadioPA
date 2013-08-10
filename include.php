@@ -55,7 +55,7 @@
 	include_once 'classes/Song.class.php';
 	include_once 'classes/PlaylistAll.class.php';
 	include_once 'classes/PlaylistEdit.class.php';
-	include_once 'classes/Meneger.class.php';
+	include_once 'classes/Manager.class.php';
 	include_once 'classes/AddTracks.class.php';
 	include_once 'classes/Event.class.php';
 	include_once 'classes/Install.class.php';

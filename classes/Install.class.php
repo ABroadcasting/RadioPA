@@ -42,7 +42,7 @@
         }
         
 		private function __construct() {			$this->request = Request::create();
-            $this->filename = $this->request->getRadioPath()."_config.php";
+            $this->filename = "_config.php";
             $this->file = file($this->filename);		}
 
 		public function getWgetCron() {			return Ssh::create()->getWgetCommand()." http://".$this->request->getServerVar('HTTP_HOST')."/radio/"."event.php -O event.php";		}
@@ -54,7 +54,7 @@
 		public function ifHag5() {			$user = $this->request->getPostVar('user');
 			$password = $this->request->getPostVar('password');
 
-			if (empty($user) or empty($password)) {				return "<p>Поля не могу быть пустыми</p>";			}
+			if (empty($user) or empty($password)) {				return "<p>Поля не могут быть пустыми</p>";			}
 
 			$this->saveConfig('USER', $user);            $this->saveConfig('PASSWORD', $password);
 
