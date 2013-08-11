@@ -83,7 +83,7 @@
 		public function getCountRow($query) {			$result = mysql_query($query, $this->link) or die($this->debug());        	return mysql_num_rows($result);		}
 		
 		public function debug() {
-			include($this->request->getRadioPath().'tpl/debug.tpl.html');
+			include($this->request->getRadioPath().'tpl/debug.tpl');
 			exit;
 		}	}
 ?>

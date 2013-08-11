@@ -184,5 +184,5 @@
 		</form>
 	</div>
 <?php
-    include('tpl/footer.tpl.html');
+    include('tpl/footer.tpl');
 ?>  	

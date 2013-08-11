@@ -50,7 +50,7 @@
 	$user = $auth->getUser();
 
 	if (empty($user)) {
-		include('tpl/login.tpl.html');
+		include('tpl/login.tpl');
 		exit;	}
 
 	# You logined as
@@ -58,5 +58,5 @@
     } else {    	$prava = "администратор";
     }
 
-    include('tpl/header.tpl.html');
+    include('tpl/header.tpl');
 ?>

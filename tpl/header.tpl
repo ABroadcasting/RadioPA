@@ -34,7 +34,7 @@
 					<tr>
 						<td background="images/navi_16.jpg" class="mainMenu">
 <?php
-	include('tpl/mainMenu.tpl.html');
+	include('tpl/mainMenu.tpl');
 ?>
 		                </td>
 					</tr>

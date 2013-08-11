@@ -47,7 +47,7 @@
         
 		private function __construct() {			$this->request = Request::create();		}
 
-		public function denied() {			include("tpl/securityDenied.tpl.html");
+		public function denied() {			include("tpl/securityDenied.tpl");
     		exit;		}
 
 		public function accessCheck($filename) {			if (!strstr('*'.$filename, '*'.$this->request->getMusicPath())) {

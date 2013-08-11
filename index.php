@@ -102,7 +102,7 @@
 	}
 ?>
 <?php
-			include('tpl/error.tpl.html');
+			include('tpl/error.tpl');
 ?>
 			<br><br>
 			<img style="position: absolute; margin-top: -1px;" src="images/go.png" border="0"> <a style="position: absolute; margin-left: 17px;" href="http://radiocms.ru" target="_blank">Официальный сайт</a>
@@ -117,5 +117,5 @@
 		</div>
 	</div>
 <?php
-    include('tpl/footer.tpl.html');
+    include('tpl/footer.tpl');
 ?>  	
