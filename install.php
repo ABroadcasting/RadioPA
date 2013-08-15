@@ -34,6 +34,7 @@
 #    http://open-rcp.ru
 #
 	ob_start();
+	$product = "Radio Panel Alpha";
 	$vers = "0.1.1";
     
     include('include.php');
@@ -390,7 +391,7 @@
 			<input class="button" type="button" value="Продолжить" name="B1" onClick="location.href='?hag=2'">
 <?php
 	} else {
-?>			Устраните проблемы что бы продолжить установку.
+?>			Устраните проблемы чтобы продолжить установку.
 <?php
 	}
 
