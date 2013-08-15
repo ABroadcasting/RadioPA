@@ -48,7 +48,7 @@
 		if ($_GET['hag'] == 2) { $hag = 2; $hag_install = "Установка: Шаг 2 (Настройка базы данных)"; }
 		if ($_GET['hag'] == 3) { $hag = 3; $hag_install = "Установка: Шаг 3 (Ввод основных данных)"; }
 		if ($_GET['hag'] == 4) { $hag = 4; $hag_install = "Установка: Шаг 4 (Настройка путей)"; }
-		if ($_GET['hag'] == 5) { $hag = 5; $hag_install = "Установка: Шаг 5 (Установка пароля RadioCMS)"; }
+		if ($_GET['hag'] == 5) { $hag = 5; $hag_install = "Установка: Шаг 5 (Установка пароля панели управления)"; }
 		if ($_GET['hag'] == 6) { $hag = 6; $hag_install = "Установка: Шаг 6 (Завершение установки)"; }
 	}
 
@@ -60,7 +60,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<style> form {margin:0;} </style>
-	<title>Установка Radio Panel Alpha</title>
+	<title>Установка <?php print $product;?></title>
 
 	<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
 		<table border="0" width="100%" cellspacing="0" cellpadding="0">
@@ -74,7 +74,7 @@
 							<tr>
 								<td width="324">
 								<img border="0" src="images/navi_02.jpg" width="588" height="38"></td>
-								<td background="images/navi_03.jpg" valign="top"><div class="navi_text"><?=IP?></a> | <?=date("H:i")?> | <a href="http://radiocms.ru/">Выход</a><br>Установка <?="RadioCMS ".$vers?></div></td>
+								<td background="images/navi_03.jpg" valign="top"><div class="navi_text"><?=IP?></a> | <?=date("H:i")?> | <a href="http://radiocms.ru/">Выход</a><br>Установка <?=$product." ".$vers?></div></td>
 							</tr>
 						</table>
 						</td>

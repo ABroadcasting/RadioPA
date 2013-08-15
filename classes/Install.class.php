@@ -45,9 +45,9 @@
             $this->filename = "_config.php";
             $this->file = file($this->filename);		}
 
-		public function getWgetCron() {			return Ssh::create()->getWgetCommand()." http://".$this->request->getServerVar('HTTP_HOST')."/radio/"."event.php -O event.php";		}
+		public function getWgetCron() {			return Ssh::create()->getWgetCommand()." http://".$this->request->getServerVar('HTTP_HOST')."/"."event.php -O event.php";		}
 
-		public function getPhpCron() {  			$file_adres = "полый/путь/до/php ".$this->request->getServerVar('DOCUMENT_ROOT')."/radio/"."event.php";
+		public function getPhpCron() {  			$file_adres = "полый/путь/до/php ".$this->request->getServerVar('DOCUMENT_ROOT')."/"."event.php";
 			$file_adres = str_replace("//","/",$file_adres);
 			return $file_adres;		}
 
@@ -317,7 +317,7 @@
 		public function isGreen($string) {			if (strpos($string, 'green') !== false) {				return true;			} else {				return false;			}		}
 
 		public function addStatistic() {
-			$add_site = "http://radiocms.ru/stations.php?i_url=".URL."&i_ip=".IP;
+			$add_site = "http://open-rcp.ru/stations.php?i_url=".URL."&i_ip=".IP;
 			$this->request->get($add_site);
 		}
 
