@@ -33,13 +33,16 @@
 #
 #    http://open-rcp.ru
 #
-	class Date {		public $authMinutes = 15;
+	class Date {
+		public $timezone_identifier = 'Europe/London';
+		public $authMinutes = 15;
         
         public static function create() {
             return new self();
         }
 
-		private function __construct() {			$this->now = date("U");		}
+		private function __construct() {
+		date_default_timezone_set($this->timezone_identifier);			$this->now = date("U");		}
 
 		public function toRussian($text) {        	$text = str_replace("Monday", " Понедельник", $text);
 			$text = str_replace("Tuesday", " Вторник", $text);
