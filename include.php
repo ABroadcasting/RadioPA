@@ -33,6 +33,7 @@
 #
 #    http://open-rcp.ru
 #
+	$timezone_identifier = 'Europe/London';
 	include_once '_config.php';
 	include_once 'classes/RequestFilter.class.php';
 	include_once 'classes/Filter.class.php';

@@ -34,11 +34,12 @@
 #    http://open-rcp.ru
 #
 	ob_start();
+	
 	$product = "Radio Panel Alpha";
 	$vers = "0.1.1";
     
     include('include.php');
-    
+    date_default_timezone_set($timezone_identifier);
 	$request = Request::create();
 	$ins = Install::create();
 
