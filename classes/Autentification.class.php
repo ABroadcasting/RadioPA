@@ -135,7 +135,7 @@
 		public function setCookieAndGoToPanel($hash) {?>
 			<script>
 				set_cookie('hash', '<?=$hash?>', 1750);
-				locationHref('/radio');
+				locationHref('/');
 
 				function set_cookie(name, value, expires) {
 					date = new Date();

@@ -188,7 +188,7 @@
 		public function getBegin() {			return substr($this->request->getMusicPath(), 0, -1);		}
 
 		public function getDirct2() {			$dirct = $this->getDirct();
-			if ($dirct) {				$dirct2 = "/music".$dirct;
+			if ($dirct) {				$dirct2 = "music".$dirct;
   				return str_replace($this->getBegin(), "", $dirct2);
   			} else {  				return false;  			}		}
 

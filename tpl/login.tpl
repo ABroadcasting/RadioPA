@@ -5,7 +5,7 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		</head>
 		<body>
-			<form method="POST" action="/radio/index.php">
+			<form method="POST" action="../index.php">
 				<div align="center">
 					<table border="0" width="211" cellspacing="0" cellpadding="0">
 						<tr>
