@@ -5,7 +5,11 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		</head>
 		<body>
+<<<<<<< HEAD
+			<form method="POST" action="../index.php">
+=======
 			<form method="POST" action="/index.php">
+>>>>>>> master
 				<div align="center">
 					<table border="0" width="211" cellspacing="0" cellpadding="0">
 						<tr>

@@ -37,8 +37,8 @@
 	define('PASSWORD', '');
 	define('MUSIC_PATH', 'music');
 	define('RADIO_PATH', '');
-	//define('EXTERNAL_CHARSET', 'cp1251');
-	define('ID3V1_CHARSET', 'cp1251');
+	define('EXTERNAL_CHARSET', 'utf8');
+	define('ID3V1_CHARSET', 'utf8');
 	define('TEMP_UPLOAD', '');
 	define('IP', '');
 	define('URL', '');
