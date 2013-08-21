@@ -33,7 +33,7 @@
 #
 #    http://open-rcp.ru
 #
-	class Meneger {
+	class Manager {
 	    
         public static $object;
         
@@ -45,9 +45,11 @@
             return self::$object;
         }
         
-		private function __construct() {			$this->request = Request::create();
+		private function __construct() {
+			$this->request = Request::create();
 			$this->db = MySql::create();
-			$this->ssh = Ssh::create();		}
+			$this->ssh = Ssh::create();
+		}
 
 		public function handler() {
             $folder = $this->getFolder();
@@ -59,10 +61,12 @@
 			}
 
 			$this->setChmod();
-        	if ($this->isUdal()) {
+
+        	if ($this->isUdal()) {
             	foreach ($this->getPostDecode('fl') as $i) {
                 	$this->delfiles($folder."/".$i);
-				}        	}
+				}
+        	}
 
         	if ($this->isMakeDir()) {
         		$this->makeDir();
@@ -73,29 +77,38 @@
 		    }
 
 		    if ($this->isCopy()) {
-		    	$rd = $this->request->getPostVar('rd');		    	foreach ($fl as $i) {
+		    	$rd = $this->request->getPostVar('rd');
+		    	foreach ($fl as $i) {
 					$this->copyfiles($folder, $i, $rd);
-				}		    }
+				}
+		    }
 
 		    if ($this->isMove()) {
-		   		$rd = $this->request->getPostVar('rd');		    	foreach ($fl as $i) {
+		   		$rd = $this->request->getPostVar('rd');
+		    	foreach ($fl as $i) {
 					if (!$this->fileexits($rd."/",$i)) {
 						$this->movefiles($folder, $i, $rd);
 					}
-				}		    }		}
+				}
+		    }
+		}
 
-		public function zaprosHandler() {			if ($this->request->hasPostVar('search_button')) {
+		public function zaprosHandler() {
+			if ($this->request->hasPostVar('search_button')) {
 				$search = $this->request->getPostVar('search');
 				$folder = $this->getFolder();
 				$playlist_id_get = $this->getPlaylistId();
 				Header ("Location: manager.php?fold=$folder&search=$search&playlist_id=$playlist_id_get");
-			}		}
+			}
+		}
 
-		public function getStart() {			if ($this->request->hasGetVar('start')) {
+		public function getStart() {
+			if ($this->request->hasGetVar('start')) {
 				return $this->request->getGetVar('start');
 			} else {
 				return false;
-			}		}
+			}
+		}
 
 		public function getPlaylistId() {
 			if ($this->request->hasGetVar('playlist_id')) {
@@ -105,17 +118,21 @@
 			}
 		}
 
-		public function getPostDecode($var) {			if ($this->request->hasPostVar($var)) {
+		public function getPostDecode($var) {
+			if ($this->request->hasPostVar($var)) {
 				$fl = $this->request->getPostVar($var);
 				if (!empty($fl)) {
 				    foreach ($fl as $k=>$v) {
 				        $fl[$k] = urldecode($v);
 				    }
 					return $fl;
-				} else {					return array();				}
+				} else {
+					return array();
+				}
 			} else {
 				return array();
-			}		}
+			}
+		}
 
 		public function isUdal() {
 			if ($this->request->hasPostVar('udal_x')) {
@@ -185,12 +202,19 @@
 			}
 		}
 
-		public function getBegin() {			return substr($this->request->getMusicPath(), 0, -1);		}
+		public function getBegin() {
+			return substr($this->request->getMusicPath(), 0, -1);
+		}
 
-		public function getDirct2() {			$dirct = $this->getDirct();
-			if ($dirct) {				$dirct2 = "music".$dirct;
+		public function getDirct2() {
+			$dirct = $this->getDirct();
+			if ($dirct) {
+				$dirct2 = 'music'.$dirct;
   				return str_replace($this->getBegin(), "", $dirct2);
-  			} else {  				return false;  			}		}
+  			} else {
+  				return false;
+  			}
+		}
 
 		public function getDirct() {
 			$begin = $this->getBegin();
@@ -201,18 +225,27 @@
 				$dirct = $fold;
 			}
 
-			if (strpos($fold, $begin) === false) {				$dirct = $begin;			}
+			if (strpos($fold, $begin) === false) {
+				$dirct = $begin;
+			}
 
 
-			return $dirct;		}
-
-		public function getBack() {			$dirct = $this->getDirct();			if ($dirct != $this->getBegin()) {
-				return substr ($dirct, 0, strrpos($dirct, "/"));
-			} else {				return false;			}
+			return $dirct;
 		}
 
-		public function getPlaylistName($id) {			$query = "SELECT * FROM `playlist` WHERE `id`=".$id;
-			return $this->db->getColumn($query, 'name');		}
+		public function getBack() {
+			$dirct = $this->getDirct();
+			if ($dirct != $this->getBegin()) {
+				return substr ($dirct, 0, strrpos($dirct, "/"));
+			} else {
+				return false;
+			}
+		}
+
+		public function getPlaylistName($id) {
+			$query = "SELECT * FROM `playlist` WHERE `id`=".$id;
+			return $this->db->getColumn($query, 'name');
+		}
 
 		public function getList() {
 			$dirct = $this->getDirct();
@@ -225,7 +258,8 @@
 			if (!$search) {
 				while ($file = readdir($hdl)) {
 					if (($file!="..")&&($file!=".")) {
-			  	      	if ($file != "index.html") {			  	      		$a3[] = $file;
+			  	      	if ($file != "index.html") {
+			  	      		$a3[] = $file;
 			  	      	}
 			  	    }
 			 	}
@@ -233,8 +267,8 @@
 				while ($file = readdir($hdl)) {
 					if (($file!="..")&&($file!=".")) {
 						$file_search = strtolower($file);
-			  	      	$naydeno = strpos($file_search,$search);
-			  	      	if ( ($naydeno !== false) /* or ($dirct==$begin) */ ) {
+			  	      	$found = strpos($file_search,$search);
+			  	      	if ( ($found !== false) /* or ($dirct==$begin) */ ) {
 			  	      		if ($file != "index.html") $a3[]=$file;
 			  	      	}
 			  	    }
@@ -300,26 +334,40 @@
 			$list['limit'] = $a2limit;
 			$list['vsego'] = $a2vsego;
 
-			return $list;		}
+			return $list;
+		}
 
 		public function isMp3($filename) {
-			if (strtolower(substr($filename, -4)) == ".mp3") {				return true;			} else {				return false;			}		}
+			if (strtolower(substr($filename, -4)) == ".mp3") {
+				return true;
+			} else {
+				return false;
+			}
+		}
 
-		public function isTempUpload($fullPath) {			if (
+		public function isTempUpload($fullPath) {
+			if (
 				TEMP_UPLOAD != "" and 
 				strpos($fullPath, "/music/".TEMP_UPLOAD) !== false
 			) {
 				return true;
-			} else {				return false;			}		}
+			} else {
+				return false;
+			}
+		}
 
 		public function getFileFolder($filename) {
 			$pos_vhoh = strrpos($filename, "/");
-			return substr($filename, 0, $pos_vhoh);		}
+			return substr($filename, 0, $pos_vhoh);
+		}
 
-		public function getFilesize($filename) {			$k_size = filesize($filename);
-    		return intval($k_size / 1024)." Кб";		}
+		public function getFilesize($filename) {
+			$k_size = filesize($filename);
+    		return intval($k_size / 1024)." Кб";
+		}
 
-		public function getUseIn($full) {			$query = "SELECT * FROM `songlist` WHERE `filename` = '".addslashes($full)."'";
+		public function getUseIn($full) {
+			$query = "SELECT * FROM `songlist` WHERE `filename` = '".addslashes($full)."'";
 		    foreach ($this->db->getLines($query) as $line) {
 		        if (empty($playlist_id)) {
 		        	$playlist_id = "`id` = ".$line['id'];
@@ -338,7 +386,10 @@
 			        }
 			    }
 			     return $playlist_name;
-		    } else {		    	return "";		    }		}
+		    } else {
+		    	return "";
+		    }
+		}
 
 		public function getTree($fld) {
 			$return = array();
@@ -364,7 +415,8 @@
 				}
 			}
 			closedir($hdl);
-			return $return;		}
+			return $return;
+		}
 
 		private function delfiles($fld) {
 			if (!is_dir($fld)) {
@@ -392,21 +444,27 @@
 			while ($file = readdir($hdl)) {
 				if (strtolower($file) == strtolower($in2)) {
 					return true;
-				} else {					return false;				}
+				} else {
+					return false;
+				}
 			}
 		}
 
 		private function makeDir() {
-			$newname = $this->request->getPostVar('newname');			$folder = $this->getFolder();			$newname2 = strtr($newname, " []{},/\!@#$%^&*'\"", "____________________");
+			$newname = $this->request->getPostVar('newname');
+			$folder = $this->getFolder();
+			$newname2 = strtr($newname, " []{},/\!@#$%^&*'\"", "____________________");
 			$newname = $folder."/".strtr($newname, " []{},/\!@#$%^&*'\"", "____________________");
 			if (!$this->fileexits($folder."/", $newname2)) {
 				mkdir ($newname, 0777);
-			}		}
+			}
+		}
 
 		private function rename() {
 			$afl = $this->getPostDecode('afl');
 			$rfl = $this->request->getPostVar('rfl');
-			$folder = $this->getFolder();			for ($i = 0; $i < sizeof($afl); $i++) {
+			$folder = $this->getFolder();
+			for ($i = 0; $i < sizeof($afl); $i++) {
 				if (($rfl[$i] != "")&($rfl[$i] != $afl[$i])& (strpos($afl[$i], "..")==False)) {
 					$file_name_tmp = $folder."/".$afl[$i];
 					$new_filename = $folder."/".$rfl[$i];
@@ -423,7 +481,8 @@
 					$query = "UPDATE `songlist` SET `filename` = '$new_filename' WHERE `filename`= '".addslashes($file_name_tmp)."'";
 					$this->db->queryNull($query);
 				}
-			}		}
+			}
+		}
 
 		private function copyfiles($rt, $fld, $tgt) {
 			$folder = $this->getFolder();
@@ -481,7 +540,8 @@
 		private function setChmod() {
 			$folder = $this->getFolder();
 
-			$arr = array();			if (!empty($folder)) {
+			$arr = array();
+			if (!empty($folder)) {
 				$arr[] = $folder;
 			}
 			if ($this->request->hasPostVar('rd')) {
@@ -491,5 +551,7 @@
 				if (file_exists($file)) {
 					$this->ssh->getResponse("chmod 777 ".$file);
 				}
-			}		}	}
+			}
+		}
+	}
 ?>

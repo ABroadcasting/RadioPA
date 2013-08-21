@@ -41,7 +41,7 @@
     	$security->denied();
 	}
 
-	$manager = Meneger::create();
+	$manager = Manager::create();
 	$manager->zaprosHandler();
 
     if ($manager->request->hasPostVar('fl')) {
@@ -72,8 +72,10 @@
 						<td>
 <?php
 		foreach ($fl as $k=>$i) {
-			if (is_dir($folder."/".$i)) {	  			$ds = " (папка)";
-	  		} else {	  			$ds = "";
+			if (is_dir($folder."/".$i)) {
+	  			$ds = " (папка)";
+	  		} else {
+	  			$ds = "";
 	  		}
 ?>
 							<input type="hidden" name="fl[]" value="<?=$i?>"><b><?=urldecode($i)?></b> <?=$ds?> из папки <?=$folder?><br>
@@ -99,8 +101,11 @@
 					<tr>
 						<td width=95%>
 <?php
-		foreach ($fl as $i) {			if (is_dir($folder."/".urldecode($i))) {				$ds = " (папка)";
-			} else {				$ds = "";
+		foreach ($fl as $i) {
+			if (is_dir($folder."/".urldecode($i))) {
+				$ds = " (папка)";
+			} else {
+				$ds = "";
 			}
 ?>
 							<input type="hidden" name="fl[]" value="<?=$i?>">&nbsp;<?=urldecode($i)?> <?=$ds?><br>
@@ -115,8 +120,11 @@
 					<tr>
 						<td width="95%">
 <?php
-		foreach ($manager->getTree($begin) as $fllnm2=>$fllnm) {?>							<input id="<?=$fllnm2?>" name="rd" type="radio" value="<?=$fllnm?>">&nbsp;
-							<label for="<?=$fllnm2?>"><?=$fllnm2?></label><br><?php
+		foreach ($manager->getTree($begin) as $fllnm2=>$fllnm) {
+?>
+							<input id="<?=$fllnm2?>" name="rd" type="radio" value="<?=$fllnm?>">&nbsp;
+							<label for="<?=$fllnm2?>"><?=$fllnm2?></label><br>
+<?php
 		}
 ?>
 <?php
@@ -150,9 +158,12 @@
 						<td width=95%>
 <?php
 		foreach ($fl as $i)	{
-			if (is_dir($folder."/".$i)) {				$ds = " (папка)";
-			} else {				$ds = "";
-			}?>
+			if (is_dir($folder."/".$i)) {
+				$ds = " (папка)";
+			} else {
+				$ds = "";
+			}
+?>
 			<input type="hidden" name="fl[]" value="<?=$i?>">&nbsp;<?=urldecode($i)?> <?=$ds?><br>
 <?php
 		}

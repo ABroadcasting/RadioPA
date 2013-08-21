@@ -40,7 +40,7 @@
 	}
 
 	$song = Song::create();
-	$manager = Meneger::create();
+	$manager = Manager::create();
 	$start = $manager->getStart();
 	$playlist_id_get = $manager->getPlaylistId();
 	$fold = $manager->getFold();
@@ -66,7 +66,8 @@
 	if (!empty($playlist_id_get)) {
 ?>
 		Добавление файлов в <?=$manager->getPlaylistName($playlist_id_get)?> (<?=$dirct2?>)
-<?php	} else {
+<?php
+	} else {
 ?>
 		Файловый менеджер <?=$dirct2?>
 <?php
@@ -95,11 +96,14 @@
 	$list = $manager->getList();
 	foreach ($list['list'] as $k) {
 
-    	if ($i == 0) {    		$bg = " bgcolor='#F5F4F7'";
-   	 	} else {    		$bg = "";
+    	if ($i == 0) {
+    		$bg = " bgcolor='#F5F4F7'";
+   	 	} else {
+    		$bg = "";
     	}
 
-    	if ($in == 0) {?>
+    	if ($in == 0) {
+?>
 			<tr <?=$bg?>>
 <?php
     	}
@@ -114,12 +118,14 @@
 					<span style='display: none;' id=t2_"<?=$ipr?>"></span>
 <?php
     	$kp = urlencode($k);
-    	if (!empty($playlist_id_get)) {?>
+    	if (!empty($playlist_id_get)) {
+?>
 					<a href="add_tracks.php?start=<?=$start?>&search=<?=$search?>&add_directory=<?=urlencode($full)?>&playlist_id=<?=$playlist_id_get?>">
     					<img src="images/plus.gif" width="16" height="16" border="0" title="Добавить папку в плейлист">
     				</a>
 <?php
-    	} else {?>
+    	} else {
+?>
 					<input id="<?=$ipr?>" name="fl[]" value="<?=$kp?>" type="checkbox">
 <?php
     	}
@@ -128,9 +134,12 @@
 				</td>
 <?php
     	} else {
-	   		if ($ipk > 2) {	    		$cvet = "white";
-	    	} else {	    		$cvet = "#F5F4F7";
-	    	}?>
+	   		if ($ipk > 2) {
+	    		$cvet = "white";
+	    	} else {
+	    		$cvet = "#F5F4F7";
+	    	}
+?>
 				<td width="25" valign="top" id="t2_<?=$ipr?>">
 <?php
 
@@ -157,7 +166,9 @@
 <?php
 	    			}
 	    		}
-	        } else {
+
+
+	        } else {
 	        	if ($manager->isMp3($k)) {
 	    			if (!empty($playlist_id_get)) {
 ?>
@@ -169,7 +180,9 @@
 ?>
 						<input id="<?=$ipr?>" name="fl[]" value="<?=$kp?>" type="checkbox" onclick="iprClick('<?=$ipr?>', '<?=$cvet?>')">
 <?php
-	    			}	        	} else {
+	    			}
+
+	        	} else {
 	            	if (!empty($playlist_id_get)) {
 ?>
 	    				<img src="images/delete2.gif" width="16" height="16" border="0" title="Это не mp3-файл">
@@ -191,7 +204,8 @@
     	$old_k = $k;
    		$k = wordwrap($k, 30, "\n", 1);
     	if (is_dir($full) === true) {
-       		$full = str_replace(" ", "%20", $full);?>
+       		$full = str_replace(" ", "%20", $full);
+?>
 				<td width=31% valign=top>
 <?php
 			if (!empty($playlist_id_get)) {
@@ -200,10 +214,12 @@
 					<a href="manager.php?fold=<?=$full?>&playlist_id=<?=$playlist_id_get?>"><b><?=$k?></b></a>
 					<br><div class="podpis">Папка номер <?=$ips?></div>
 <?php
-			} else {?>
+			} else {
+?>
 					<img src="images/m_folder.gif" border="0" width="13" height="11">
 					<a href="manager.php?fold=<?=$full?>"><b><?=$k?></b></a>
-					<br><div class="podpis">Папка номер <?=$ips+1?></div><?php
+					<br><div class="podpis">Папка номер <?=$ips+1?></div>
+<?php
 			}
 ?>
 				</td>
@@ -231,9 +247,12 @@
 					}
       			} else {
 
-					if (!$playlist_name) {?>          	  		<div class="podpis"><font color="#993333">Не используется!</font></div>
+					if (!$playlist_name) {
+?>
+          	  		<div class="podpis"><font color="#993333">Не используется!</font></div>
 <?php
-					} else {?>
+					} else {
+?>
           	  		<div class="podpis"><font color="#669999">Используется в <i><?=$playlist_name?></i></font></div>
 <?php
 					}
@@ -244,20 +263,25 @@
      	}
         $ipr = $ipr+1;
         $ips = $ips+1;
-    	if ($i == 1) {    		$i = 0;
+    	if ($i == 1) {
+    		$i = 0;
     	} else {
     		$i++;
     	}
     	if ($in == 2) {
-?>    		</tr>
+?>
+    		</tr>
 <?php
     	}
-		if ($in == 2) {    	 	$in = 0;
+		if ($in == 2) {
+    	 	$in = 0;
     	} else {
     		$in++;
     	}
-		if ($ipk == 5) {			$ipk = 0;
-		} else {			$ipk++;;
+		if ($ipk == 5) {
+			$ipk = 0;
+		} else {
+			$ipk++;;
 		}
 	}
 ?>
@@ -306,9 +330,12 @@
 		echo " | ";
 	}
 
-	if ( ($list['vsego'] > $list['limit']) and ($a2ostalos >= $list['limit']) ) {    	$a2next = $list['start']+$list['limit'];?>
+	if ( ($list['vsego'] > $list['limit']) and ($a2ostalos >= $list['limit']) ) {
+    	$a2next = $list['start']+$list['limit'];
+?>
 					<a href="?start=<?=$a2next?>&search=<?=$search?>&fold=<?=$fold?>&playlist_id=<?=$playlist_id_get?>">Дальше</a>
-<?php	}
+<?php
+	}
 
 	if ($a2ostalos <= $list['limit']) {
 		$list['end'] = $list['start']+$a2ostalos;
@@ -329,7 +356,8 @@
 ?>
 					<input class="button" type="button" value="Завершить добавление" name="back" onClick="location.href='playlist_view.php?playlist_id=<?=$playlist_id_get?>'">
 <?php
-	} else {?>
+	} else {
+?>
 					<input type=image src="images/m_new_folder.png" width="32" height="32" title="Создать папку" name="md">
 					<input type="hidden" name="md" value="md">
 				</td>
