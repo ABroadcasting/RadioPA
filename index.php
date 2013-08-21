@@ -64,7 +64,7 @@
 <?php
 	$count = $file->getCountTempFiles();
 	$pokazat = "";
-	if ($count >= 1 and TEMP_UPLOAD != "") {		$pokazat = " — <a href='/radio/manager.php?fold=".$request->getMusicPath().TEMP_UPLOAD."'>Посмотреть</a>";
+	if ($count >= 1 and TEMP_UPLOAD != "") {		$pokazat = " — <a href='manager.php?fold=".$request->getMusicPath().TEMP_UPLOAD."'>Посмотреть</a>";
 	} else {		$count = 0;
 	}
 ?>
