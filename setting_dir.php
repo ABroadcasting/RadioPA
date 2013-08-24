@@ -56,7 +56,7 @@
 		<div class="navi"><a href="setting_system.php">Настройки системы</a></div>
 		<div class="navi_white"><a href="setting_dir.php">Каталог</a></div>
 		<br><br>
-		<div class="title">Каталог RadioCMS</div>
+		<div class="title">Каталог RadioPA</div>
 			<form method="POST" action="setting_dir.php">
 				<div class="border">
 					<table border="0" width="97%" cellpadding="0" class="paddingtable">

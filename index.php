@@ -58,7 +58,7 @@
 ?>
 	Пожалуйста, используйте главное меню для работы с доступными сервисами.
 	<br><br>
-	Система: <b>RadioCMS</b><br>
+	Система: <b>RadioPA</b><br>
 	Версия: <b><?=RADIOCMS_VERSION?></b>
 	<br>
 <?php
@@ -75,7 +75,7 @@
 <?php
     if (!$ssh->checkEzstreamCompatibility()) {
 ?>
-            <div><span class="red">Установлен ezstream не с сайта RadioCMS, существуют ограничения на длинну id3-тегов</span></div>
+            <div><span class="red">Установлен ezstream не с сайта RadioPA, существуют ограничения на длинну id3-тегов</span></div>
 <?php
     }   
 ?>
@@ -89,9 +89,9 @@
 		DIR_GENRE != ""
 	) {
 ?>
-			<div>Ваше радио <span class="green">отображается</span> в каталоге RadioCMS</div>
+			<div>Ваше радио <span class="green">отображается</span> в каталоге RadioPA</div>
 <?php
-	} else {?>			<div>Ваше радио <span class="red">не отображается</span> в каталоге RadioCMS — <a href='setting_dir.php'>Исправить</a></div>
+	} else {?>			<div>Ваше радио <span class="red">не отображается</span> в каталоге RadioPA — <a href='setting_dir.php'>Исправить</a></div>
 <?php	}
 ?>
 <?php

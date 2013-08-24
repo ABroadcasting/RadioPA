@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>RadioCMS</title>
+		<title>RadioPA</title>
 		<link rel="stylesheet" href="files/admin_style.css" type="text/css">
 		<script src="files/playlist_edit.js"></script>
 		<script src="files/manager.js"></script>
@@ -19,7 +19,7 @@
 						<table border="0" width="100%" cellspacing="0" cellpadding="0">
 							<tr>
 								<td width="324">
-								<a href="/radio/"><img border="0" src="images/navi_02.jpg" width="588" height="38"></a></td>
+								<a href="index.php"><img border="0" src="images/navi_02.jpg" width="588" height="38"></a></td>
 								<td background="images/navi_03.jpg" valign="top"><div class="navi_text">
 		<?php
 			if (strpos(URL,'http://') === false) {				$adres2 = 'http://'.URL;

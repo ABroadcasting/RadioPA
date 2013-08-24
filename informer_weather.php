@@ -34,7 +34,7 @@
 #    http://open-rcp.ru
 #
 	$root_url = "http://informer.gismeteo.ru/xml/";
-	$local_dir = $_SERVER["DOCUMENT_ROOT"]."/radio/files/";
+	$local_dir = $_SERVER["DOCUMENT_ROOT"]."/files/";
 
 	$xml_file = array();
 

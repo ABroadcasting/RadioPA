@@ -1,6 +1,6 @@
 	<html>
 		<head>
-			<title>Вход RadioCMS</title>
+			<title>Вход RadioPA</title>
 			<link rel="stylesheet" href="files/admin_style.css" type="text/css">
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		</head>
@@ -13,7 +13,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a href="http://radiocms.ru">
+								<a href="http://open-rcp.ru">
 									<img border="0" src="images/logo.png">
 								</a>
 							</td>

@@ -36,7 +36,7 @@
 	ob_start();
 	
 	$product = "Radio Panel Alpha";
-	$vers = "0.1.1";
+	$vers = "0.1.0";
     
     include('include.php');
     date_default_timezone_set($timezone_identifier);
