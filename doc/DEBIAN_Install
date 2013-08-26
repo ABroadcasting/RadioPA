@@ -1,1 +1,1 @@
-# aptitude install apache2 php5 libapache2-mod-php5 php5-curl libssh2-php mysql-server mysql-client php5-mysql icecast2 ezstream
+# aptitude install apache2 php5 libapache2-mod-php5 php5-curl libssh2-php mysql-server mysql-client php5-mysql icecast2 ezstream php5-gd
