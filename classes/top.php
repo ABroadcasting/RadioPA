@@ -33,10 +33,33 @@
 #
 #    http://open-rcp.ru
 #
-if(file_exists('install/index.php')){};
-$page = '';
-#$page = $_GET['page'];
-if ($page==''){$page='main';};
-if(file_exists('classes/'.$page.'.php')){include_once('classes/'.$page.'.php');} else {$page='main';};
+    ob_start();
+	require_once('include.php');
 
-#if(file_exists('classes/main.php')){} else {$page='main';};
+	$requestFilter = RequestFilter::create();
+	$auth = Autentification::create();
+	$request = Request::create();
+	$dateTime = Date::create();
+	$security = Security::create();
+	$filter = Filter::create();
+	$ssh = Ssh::create();
+
+	/* --------------------------------------- */
+
+	$auth->handler();
+	$user = $auth->getUser();
+
+	if (empty($user)) {
+		include('../templates/'.TEMPLATE.'/html/login.html');
+		exit;
+	}
+
+	# You logined as
+    if ($user['admin'] == 0) {
+    	$prava = "DJ";
+    } else {
+    	$prava = "администратор";
+    }
+
+    include('../templates/'.TEMPLATE.'/html/header.html');
+?>

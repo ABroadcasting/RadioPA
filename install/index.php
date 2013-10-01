@@ -34,39 +34,38 @@
 #    http://open-rcp.ru
 #
 	ob_start();
-	
-	$product = "Radio Panel Alpha";
-	$vers = "0.1.0";
-    
+
     include('include.php');
+	include_once('Install.class.php');
+	$timezone_identifier = TIMEZONE_IDENIFIER;
     date_default_timezone_set($timezone_identifier);
 	$request = Request::create();
 	$ins = Install::create();
 
-	$hag_install = "Установка: Шаг 1 (Проверка библиотек и файлов)";
+	$hag_install = "1 (Проверка библиотек и файлов)";
 	$hag = 1;
 	if (!empty($_GET['hag'])) {
-		if ($_GET['hag'] == 2) { $hag = 2; $hag_install = "Установка: Шаг 2 (Настройка базы данных)"; }
-		if ($_GET['hag'] == 3) { $hag = 3; $hag_install = "Установка: Шаг 3 (Ввод основных данных)"; }
-		if ($_GET['hag'] == 4) { $hag = 4; $hag_install = "Установка: Шаг 4 (Настройка путей)"; }
-		if ($_GET['hag'] == 5) { $hag = 5; $hag_install = "Установка: Шаг 5 (Установка пароля панели управления)"; }
-		if ($_GET['hag'] == 6) { $hag = 6; $hag_install = "Установка: Шаг 6 (Завершение установки)"; }
+		if ($_GET['hag'] == 2) { $hag = 2; $hag_install = "2 (Настройка базы данных)"; }
+		if ($_GET['hag'] == 3) { $hag = 3; $hag_install = "3 (Ввод основных данных)"; }
+		if ($_GET['hag'] == 4) { $hag = 4; $hag_install = "4 (Настройка путей)"; }
+		if ($_GET['hag'] == 5) { $hag = 5; $hag_install = "5 (Установка пароля панели управления)"; }
+		if ($_GET['hag'] == 6) { $hag = 6; $hag_install = "6 (Завершение установки)"; }
 	}
 
-	$action = "install.php?hag=$hag";
+	$action = "?hag=$hag";
 ?>
 <html>
 	<head>
-		<link rel="stylesheet" href="files/admin_style.css" type="text/css">
+		<link rel="stylesheet" href="../templates/default/css/style.css" type="text/css">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<style> form {margin:0;} </style>
-	<title>Установка <?php print $product;?></title>
+	<title>Установка <?=ORCP_TITLE?></title>
 
 	<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
 		<table border="0" width="100%" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="2" align="right"><img border="0" src="images/navi_01.jpg" width="1" height="122"></td>
+				<td width="2" align="right"><img border="0" src="../templates/default/images/navi_01.jpg" width="1" height="122"></td>
 				<td>
 				<table border="0" width="100%" cellspacing="0" cellpadding="0">
 					<tr>
@@ -74,27 +73,28 @@
 						<table border="0" width="100%" cellspacing="0" cellpadding="0">
 							<tr>
 								<td width="324">
-								<img border="0" src="images/navi_02.jpg" width="588" height="38"></td>
-								<td background="images/navi_03.jpg" valign="top"><div class="navi_text"><?=IP?></a> | <?=date("H:i")?> | <a href="http://radiocms.ru/">Выход</a><br>Установка <?=$product." ".$vers?></div></td>
+								<img border="0" src="../templates/default/images/navi_02.jpg" width="588" height="38"></td>
+								<td background="../templates/default/images/navi_03.jpg" valign="top"><div class="navi_text"><?=IP?></a> | <?=date("H:i")?> | <a href="http://radiocms.ru/">Выход</a><br>Установка <?=ORCP_TITLE." "?><?=ORCP_VERSION?></div></td>
 							</tr>
 						</table>
 						</td>
 					</tr>
 					<tr>
-						<td background="images/navi_16.jpg"><img border="0" src="images/navi_05.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"><img border="0" src="images/navi_07.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"><img border="0" src="images/navi_09.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"><img border="0" src="images/navi_11.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"><img border="0" src="images/navi_17.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"><img border="0" src="images/navi_13.jpg" width="100" height="84"><img border="0" src="images/navi_06.jpg" width="1" height="84"></tr>
+						<td background="../templates/default/images/navi_16.jpg"><img border="0" src="../templates/default/images/navi_05.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"><img border="0" src="../templates/default/images/navi_07.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"><img border="0" src="../templates/default/images/navi_09.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"><img border="0" src="../templates/default/images/navi_11.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"><img border="0" src="../templates/default/images/navi_17.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"><img border="0" src="../templates/default/images/navi_13.jpg" width="100" height="84"><img border="0" src="../templates/default/images/navi_06.jpg" width="1" height="84"></tr>
 				</table>
 				</td>
-				<td width="2" align="left"><img border="0" src="images/navi_04.jpg" width="1" height="122"></td>
+				<td width="2" align="left"><img border="0" src="../templates/default/images/navi_04.jpg" width="1" height="122"></td>
 			</tr>
 		</table>
 
 		<div class="body">
-		<div class="title"><?=$hag_install?></div>
+		<div class="title"><?php echo 'Установка: Шаг '.$hag_install.'';?></div>
 		<div class="border">
 		<form method="POST" action="<?php echo $action; ?>">
 <!-- ///////// 3 /////////////////////////////////////////////////////////////////// 3 ////////// -->
 <?php
-	if ($hag == 3) {?>
+	if ($hag == 3) {
+?>
 			<table border="0" width="97%" cellpadding="0" class="paddingtable">
 				<tr>
 					<td width="15%" valign="top">IP-адрес:<br>
@@ -230,7 +230,7 @@
 				<tr>
 					<td valign="top">Пароль:</td>
 					<td valign="top">
-						<input type="text" name="password" size="55" value="<?=PASSWORD?>"><br>
+						<input type="password" name="password" size="55" value="<?=PASSWORD?>"><br>
 						<div class="podpis">используется для входа</div>
 					</td>
 				</tr>
@@ -251,7 +251,8 @@
 <!-- ///////// 2 /////////////////////////////////////////////////////////////////// 2 ////////// -->
 
 <?php
-	if ($hag == 2) {?>
+	if ($hag == 2) {
+?>
 			<table border="0" width="97%" cellpadding="0" class="paddingtable">
 				<tr>
 					<td width="150" valign="top"><span lang="en-us">Сервер:</span><br>
@@ -279,7 +280,7 @@
 					<td valign="top"><span lang="en-us">Пароль:</span><br>
 					<div class="podpis">укажите пароль</div></td>
 					<td valign="top">
-						<input type="text" name="db_password" size="35" value="<?=$request->hasPostVar('db_password') ? $request->getPostVar('db_password') : DB_PASSWORD?>">
+						<input type="password" name="db_password" size="35" value="<?=$request->hasPostVar('db_password') ? $request->getPostVar('db_password') : DB_PASSWORD?>">
 					</td>
 				</tr>
 				<tr>
@@ -295,7 +296,9 @@
 				</tr>
 			</table>
 <?php
-		if ($request->hasPostVar("hag2")) {			echo $ins->ifHag2();		}
+		if ($request->hasPostVar("hag2")) {
+			echo $ins->ifHag2();
+		}
 ?>
 			<p>
 				<input class="button" type="button" value="Назад" name="B1" onClick="location.href='?hag=1'">
@@ -347,12 +350,12 @@
 				</tr>
 				<tr>
 					<td valign="top">Права на файл <b>_config.php</b></td>
-					<td valign="top"><?=$ins->getPerms($request->getRadioPath()."_config.php")?></td>
+					<td valign="top"><?=$ins->getPerms($request->getRadioPath()."../conf/config.php")?></td>
 					<td valign="top"><span class="green">доступен для записи</span></td>
 				</tr>
 				<tr>
 					<td valign="top">Права на файл <b>_system.php</b></td>
-					<td valign="top"><b><?=$ins->getPerms($request->getRadioPath()."_system.php")?></b></td>
+					<td valign="top"><b><?=$ins->getPerms($request->getRadioPath()."../conf/system.php")?></b></td>
 					<td valign="top"><span class="green">доступен для записи</span></td>
 				</tr>
 				<tr>
@@ -388,11 +391,13 @@
 			</table>
 	<br>
 <?php
-	if ($ins->ifHag1()) {?>
+	if ($ins->ifHag1()) {
+?>
 			<input class="button" type="button" value="Продолжить" name="B1" onClick="location.href='?hag=2'">
 <?php
 	} else {
-?>			Устраните проблемы чтобы продолжить установку.
+?>
+			Устраните проблемы чтобы продолжить установку.
 <?php
 	}
 

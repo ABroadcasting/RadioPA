@@ -33,10 +33,29 @@
 #
 #    http://open-rcp.ru
 #
-if(file_exists('install/index.php')){};
-$page = '';
-#$page = $_GET['page'];
-if ($page==''){$page='main';};
-if(file_exists('classes/'.$page.'.php')){include_once('classes/'.$page.'.php');} else {$page='main';};
-
-#if(file_exists('classes/main.php')){} else {$page='main';};
+	include_once '../conf/config.php';
+	include_once '../classes/class/RequestFilter.class.php';
+	include_once '../classes/class/Filter.class.php';
+	include_once '../classes/class/Autentification.class.php';
+	include_once '../classes/class/Request.class.php';
+	include_once '../classes/class/DateTime.class.php';
+	include_once '../classes/class/MySql.class.php';
+	include_once '../classes/class/Setting.class.php';
+	include_once '../classes/class/FileManager.class.php';
+	include_once '../classes/class/Ssh.class.php';
+	include_once '../classes/class/Order.class.php';
+	include_once '../classes/class/Security.class.php';
+	include_once '../classes/class/Repeat.class.php';
+	include_once '../classes/class/Statistic.class.php';
+	include_once '../classes/class/Dj.class.php';
+	include_once '../classes/class/Status.class.php';
+	include_once '../classes/class/Tracklist.class.php';
+	include_once '../classes/class/Nowplay.class.php';
+	include_once '../classes/class/Playlist.class.php';
+	include_once '../classes/class/Song.class.php';
+	include_once '../classes/class/PlaylistAll.class.php';
+	include_once '../classes/class/PlaylistEdit.class.php';
+	include_once '../classes/class/Manager.class.php';
+	include_once '../classes/class/AddTracks.class.php';
+	include_once '../classes/class/Event.class.php';
+?>

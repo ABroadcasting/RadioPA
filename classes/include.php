@@ -33,43 +33,29 @@
 #
 #    http://open-rcp.ru
 #
-	define('USER', '');
-	define('PASSWORD', '');
-	define('MUSIC_PATH', 'music');
-	define('RADIO_PATH', '');
-	define('EXTERNAL_CHARSET', 'utf8');
-	define('ID3V1_CHARSET', 'utf8');
-	define('TEMP_UPLOAD', '');
-	define('IP', '');
-	define('URL', '');
-	define('PORT', '8000');
-	define('SSH_USER', '');
-	define('SSH_PASS', '');
-	define('CF_EZSTREAM', '');
-	define('CF_ICECAST', '');
-	define('PLAYLIST', '');
-	define('ICE_LOGIN', '');
-	define('ICE_PASS', '');
-	define('SYSTEM_SYMVOL', 'djingl');
-	define('NO_REPEAT', '1');
-	define('TRACK_CUT_LENGTH', '180');
-	define('PERIOD', '3');
-	define('LIMIT_EVENT', '500');
-	define('LIMIT_ZAKAZOV', '4');
-	define('TRANSLIT', 'off');
-
-	define('DB_HOST', 'localhost');
-	define('DB_LOGIN', '');
-	define('DB_PASSWORD', '');
-	define('DB_NAME', '');
-
-	define('DIR_SHOW', 'off');
-	define('DIR_NAME', '');
-	define('DIR_URL', '');
-	define('DIR_STREAM', '');
-	define('DIR_DESCRIPTION', '');
-	define('DIR_GENRE', '');
-	define('DIR_BITRATE', '128');
-    
-    define('RADIOCMS_VERSION', '2.5');
+	include_once 'conf/config.php';
+	include_once 'classes/class/RequestFilter.class.php';
+	include_once 'classes/class/Filter.class.php';
+	include_once 'classes/class/Autentification.class.php';
+	include_once 'classes/class/Request.class.php';
+	include_once 'classes/class/DateTime.class.php';
+	include_once 'classes/class/MySql.class.php';
+	include_once 'classes/class/Setting.class.php';
+	include_once 'classes/class/FileManager.class.php';
+	include_once 'classes/class/Ssh.class.php';
+	include_once 'classes/class/Order.class.php';
+	include_once 'classes/class/Security.class.php';
+	include_once 'classes/class/Repeat.class.php';
+	include_once 'classes/class/Statistic.class.php';
+	include_once 'classes/class/Dj.class.php';
+	include_once 'classes/class/Status.class.php';
+	include_once 'classes/class/Tracklist.class.php';
+	include_once 'classes/class/Nowplay.class.php';
+	include_once 'classes/class/Playlist.class.php';
+	include_once 'classes/class/Song.class.php';
+	include_once 'classes/class/PlaylistAll.class.php';
+	include_once 'classes/class/PlaylistEdit.class.php';
+	include_once 'classes/class/Manager.class.php';
+	include_once 'classes/class/AddTracks.class.php';
+	include_once 'classes/class/Event.class.php';
 ?>
