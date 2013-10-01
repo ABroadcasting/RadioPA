@@ -34,7 +34,7 @@
 #    http://open-rcp.ru
 #
 	require_once('include.php');
-	require_once("_system.php");
+	require_once("../conf/system.php");
 
 	$statistic = Statistic::create();
 	$statistic->updateAll();
