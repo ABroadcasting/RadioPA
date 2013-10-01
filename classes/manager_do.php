@@ -33,10 +33,21 @@
 #
 #    http://open-rcp.ru
 #
-if(file_exists('install/index.php')){};
-$page = '';
-#$page = $_GET['page'];
-if ($page==''){$page='main';};
-if(file_exists('classes/'.$page.'.php')){include_once('classes/'.$page.'.php');} else {$page='main';};
+	ob_start();
+	require_once('include.php');
 
-#if(file_exists('classes/main.php')){} else {$page='main';};
+	$auth = Autentification::create();
+	$user = $auth->getUser();
+	$security = Security::create();
+
+	# Access to the module
+    if (!empty($user) and $user['admin'] != 1) {
+    	$security->denied();
+	}
+
+	$manager = Manager::create();
+	$manager->handler();
+
+	Header ("Location: manager.php?fold=".$manager->getFolder()."&start=".$manager->getStart()."&search=".$manager->getSearch());
+?>
+

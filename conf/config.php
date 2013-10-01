@@ -33,31 +33,47 @@
 #
 #    http://open-rcp.ru
 #
-	$timezone_identifier = 'Europe/London';
-	include_once '_config.php';
-	include_once 'classes/RequestFilter.class.php';
-	include_once 'classes/Filter.class.php';
-	include_once 'classes/Autentification.class.php';
-	include_once 'classes/Request.class.php';
-	include_once 'classes/DateTime.class.php';
-	include_once 'classes/MySql.class.php';
-	include_once 'classes/Setting.class.php';
-	include_once 'classes/FileManager.class.php';
-	include_once 'classes/Ssh.class.php';
-	include_once 'classes/Order.class.php';
-	include_once 'classes/Security.class.php';
-	include_once 'classes/Repeat.class.php';
-	include_once 'classes/Statistic.class.php';
-	include_once 'classes/Dj.class.php';
-	include_once 'classes/Status.class.php';
-	include_once 'classes/Tracklist.class.php';
-	include_once 'classes/Nowplay.class.php';
-	include_once 'classes/Playlist.class.php';
-	include_once 'classes/Song.class.php';
-	include_once 'classes/PlaylistAll.class.php';
-	include_once 'classes/PlaylistEdit.class.php';
-	include_once 'classes/Manager.class.php';
-	include_once 'classes/AddTracks.class.php';
-	include_once 'classes/Event.class.php';
-	include_once 'classes/Install.class.php';
+	define('TEMPLATE', 'default');
+	define('TIMEZONE_IDENIFIER', 'Europe/London');
+	define('USER', '');
+	define('PASSWORD', '');
+	define('MUSIC_PATH', '/var/www/music');
+	define('RADIO_PATH', '');
+	define('EXTERNAL_CHARSET', 'utf8');
+	define('ID3V1_CHARSET', 'utf8');
+	define('TEMP_UPLOAD', '');
+	define('IP', '');
+	define('URL', '');
+	define('PORT', '8000');
+	define('SSH_USER', '');
+	define('SSH_PASS', '');
+	define('CF_EZSTREAM', '');
+	define('CF_ICECAST', '');
+	define('PLAYLIST', '');
+	define('ICE_LOGIN', '');
+	define('ICE_PASS', '');
+	define('SYSTEM_SYMVOL', 'jingle');
+	define('NO_REPEAT', '1');
+	define('TRACK_CUT_LENGTH', '180');
+	define('PERIOD', '3');
+	define('LIMIT_EVENT', '500');
+	define('LIMIT_ZAKAZOV', '4');
+	define('TRANSLIT', 'off');
+
+	define('DB_HOST', 'localhost');
+	define('DB_LOGIN', '');
+	define('DB_PASSWORD', '');
+	define('DB_NAME', '');
+
+	define('DIR_SHOW', 'off');
+	define('DIR_NAME', '');
+	define('DIR_URL', '');
+	define('DIR_STREAM', '');
+	define('DIR_DESCRIPTION', '');
+	define('DIR_GENRE', '');
+	define('DIR_BITRATE', '128');
+    
+	define('ORCP_TITLE', 'Radio Panel Alpha');
+    define('ORCP_VERSION', '0.2.0');
+	define('ORCP_CODENAME', 'Orion');
 ?>
