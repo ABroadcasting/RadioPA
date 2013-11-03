@@ -1,0 +1,28 @@
+#RadioPA must contain.
+#########################
+An ability to create a new canel with password, mountpoint etc
+Support mpd server
+Support liquidsoap
+Parsing icecast info
+Generating playlists
+Track order
+Ability to use reclame block
+Abitity to use podcasts
+GeoIP tracking from icecast
+Axe and sex statistic
+Site API
+Ability to use Google Adwords and Yandex statistic
+Mrtg statistic
+Social Engines
+vk.com
+odnoklassniki.ru
+facebook.com
+blogger
+livejournal
+showbiza.net
+promodj
+google+
+instagram
+tweeter
+topdj.ua
+soundcloud
