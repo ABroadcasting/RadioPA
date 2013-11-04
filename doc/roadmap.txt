@@ -1,9 +1,16 @@
 #RadioPA must contain.
 #########################
+Multilanguage support
 An ability to create a new canel with password, mountpoint etc
+Broadcasting timetable
+Recaptcha
+DJ vCard
+Order form
+Tag editor
 Support mpd server
 Support liquidsoap
 Parsing icecast info
+Add a counter for listeners per year, per month and per day
 Generating playlists
 Track order
 Ability to use reclame block
@@ -13,7 +20,8 @@ Axe and sex statistic
 Site API
 Ability to use Google Adwords and Yandex statistic
 Mrtg statistic
-Social Engines
+##############
+Social Engines:
 vk.com
 odnoklassniki.ru
 facebook.com
